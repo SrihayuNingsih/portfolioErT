@@ -18,11 +18,11 @@ export function Header() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      setIsAtTop(currentScrollY < 50);
+      setIsAtTop(currentScrollY < 20);
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setShowHeader(false);
-      } else if (lastScrollY - currentScrollY > 50) {
+      } else if (lastScrollY - currentScrollY > 20) {
         setShowHeader(true);
       }
 
@@ -68,7 +68,7 @@ export function Header() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: showHeader ? 0 : -120 }} // 🔧 DIUBAH
-      transition={{ duration: 0.3, ease: 'easeInOut' }} // 🔧 DITAMBAHKAN
+      transition={{ duration: 0.25, ease: 'easeInOut' }} // 🔧 DITAMBAHKAN
       className={`${
         isAtTop ? 'bg-transparent' : 'bg-slate-900/70 backdrop-blur-lg'
       } ${

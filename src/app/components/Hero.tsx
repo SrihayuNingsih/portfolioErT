@@ -24,7 +24,12 @@ const CodeLine = ({
         py-[2px]
         max-w-full
         overflow-hidden
-        ${!noBorder ? 'hover:bg-white/5' : ''}
+        rounded-md
+        ${
+          !noBorder
+            ? 'hover:bg-white/7 transition border-l-2 border-transparent hover:border-cyan-400'
+            : ''
+        }
       `}
       style={{
         marginLeft: `${Math.min(indent * 12, 32)}px`,
@@ -49,7 +54,13 @@ export function Hero() {
           >
             <div className="rounded-xl bg-[#0d1224] overflow-hidden">
               {/* window bar */}
-              <div className="flex gap-2 px-4 py-3 border-b border-white/10">
+              <div
+                className="flex gap-2 px-4 py-3 border-b"
+                style={{
+                  borderImage:
+                    'linear-gradient(to right, #facc15, #3b82f6, #22d3ee, #a855f7, #ec4899) 1',
+                }}
+              >
                 <span className="w-3 h-3 bg-red-500 rounded-full" />
                 <span className="w-3 h-3 bg-orange-400 rounded-full" />
                 <span className="w-3 h-3 bg-green-500 rounded-full" />
