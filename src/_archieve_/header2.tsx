@@ -53,7 +53,7 @@ export function Header() {
             className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
           >
-            E.r T
+            Portfolio
           </motion.a>
 
           {/* Desktop Navigation */}
