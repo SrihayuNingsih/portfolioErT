@@ -81,14 +81,32 @@ export function Header() {
 
       <nav id="home" className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* LOGO */}
+          {/* LOGO AWAL*/}
+          {/* <motion.a
+            href="#home"
+            onClick={(e) => scrollToSection(e, '#home')}
+            className="text-2xl font-bold bg-gradient-to-b from-cyan-300 to-yellow-500 bg-clip-text text-transparent"
+            whileHover={{ scale: 1.05 }}
+          >
+            <span className="font-bold text-slate-50">Triple X</span>
+          </motion.a> */}
+
           <motion.a
             href="#home"
             onClick={(e) => scrollToSection(e, '#home')}
-            className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
-            whileHover={{ scale: 1.05 }}
+            className="flex items-center text-2xl font-bold relative h-10" // Tambahkan flex dan gap
           >
-            E.r T
+            {/* Bagian Teks */}
+            <span className="text-slate-50">Triple</span>
+
+            {/* Bagian Gambar/Logo Ikon */}
+            <div className="relative w-24 h-28">
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="absolute mt-0.5 -ml-8 max-w-none w-24 h-28 object-contain"
+              />
+            </div>
           </motion.a>
 
           {/* DESKTOP NAV */}

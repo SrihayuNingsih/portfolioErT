@@ -45,7 +45,7 @@ export function Hero() {
   return (
     <section className="bg-[#0d1117] text-white">
       {/* ================= PAGE 1 : CODE CARD ================= */}
-      <div className="min-h-screen flex items-center justify-center px-2 pt-14 lg:pt-14 lg:px-6">
+      <div className="min-h-screen flex items-center justify-center px-2 pt-14 lg:pt-16 lg:px-6">
         <div className="w-full">
           <div
             className="w-full rounded-xl p-[2px]
