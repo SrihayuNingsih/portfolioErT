@@ -297,24 +297,24 @@ export function Hero() {
             <span className="text-blue-500">Software</span> :{' '}
             <span className="text-yellow-400">Data Science</span> :{' '}
             <span className="text-red-500">Architecture</span> :{' '}
-            <span className="text-white">Legal</span> :{' '}
+            <span className="text-white">Legal Competencies</span> :{' '}
             <span className="text-orange-400">Mathematics</span> :{' '}
             <span className="text-cyan-200">English</span>
           </h2>
 
           <div className="flex gap-6 text-2xl text-pink-500">
-            <FaGithub />
-            <FaLinkedin />
-            <FaFacebook />
-            <SiLeetcode />
-            <FaTwitter />
+            <FaGithub className="cursor-pointer hover:text-white transition" />
+            <FaLinkedin className="cursor-pointer hover:text-white transition" />
+            <FaFacebook className="cursor-pointer hover:text-white transition" />
+            <SiLeetcode className="cursor-pointer hover:text-white transition" />
+            <FaTwitter className="cursor-pointer hover:text-white transition" />
           </div>
 
           <div className="flex gap-4 flex-wrap">
-            <button className="flex items-center gap-2 px-6 py-3 rounded-full border-2 border-pink-500 hover:bg-pink-500 transition">
+            <button className="cursor-pointer flex items-center gap-2 px-6 py-3 rounded-full border-2 border-pink-500 hover:bg-pink-500 transition">
               Contact Me <MdPersonSearch />
             </button>
-            <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 hover:scale-105 transition">
+            <button className="cursor-pointer flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 hover:scale-105 transition">
               Get Resume <MdFileDownload />
             </button>
           </div>

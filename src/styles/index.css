@@ -7,6 +7,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Ruang kosong di kanan saat mobile (horizontal overflow) */
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
