@@ -45,7 +45,7 @@ export function Hero() {
   return (
     <section className="bg-[#0d1117] text-white">
       {/* ================= PAGE 1 : CODE CARD ================= */}
-      <div className="min-h-screen flex items-center justify-center px-2 pt-20 lg:pt-18 lg:px-6">
+      <div className="flex items-center justify-center px-2 pt-20 lg:pt-18 lg:px-6">
         <div className="w-full">
           <div
             className="w-full rounded-xl p-[2px]
@@ -350,7 +350,7 @@ export function Hero() {
       </div>
 
       {/* ================= PAGE 2 : LEFT ================= */}
-      <div className="min-h-screen flex items-center px-6 lg:px-20">
+      <div className="flex items-center px-6 lg:px-20">
         <div className="max-w-3xl space-y-8">
           <h1 className="text-3xl lg:text-5xl font-bold">
             Professional <br /> Multitalent
