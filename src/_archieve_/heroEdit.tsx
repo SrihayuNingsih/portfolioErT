@@ -3,239 +3,209 @@ import { FaGithub, FaLinkedin, FaFacebook, FaTwitter } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 import { MdPersonSearch, MdFileDownload } from 'react-icons/md';
 
+/* ================= CODE LINE ================= */
 const CodeLine = ({
   indent = 0,
+  noBorder = false,
   children,
 }: {
   indent?: number;
+  noBorder?: boolean;
   children: React.ReactNode;
-}) => (
-  <div
-    className="group flex items-start gap-3 px-3 py-[2px] rounded-md
-               hover:bg-white/5 transition
-               border-l-2 border-transparent hover:border-cyan-400"
-    style={{ marginLeft: indent * 16 }}
-  >
-    {children}
-  </div>
-);
+}) => {
+  return (
+    <div
+      className={`
+        group
+        flex flex-wrap
+        items-start
+        gap-x-1
+        px-3 md:px-4
+        py-[2px]
+        max-w-full
+        overflow-hidden
+        rounded-md
+        ${
+          !noBorder
+            ? 'hover:bg-white/7 transition border-l-2 border-transparent hover:border-cyan-400'
+            : ''
+        }
+      `}
+      style={{
+        marginLeft: `${Math.min(indent * 12, 32)}px`,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
+/* ================= HERO ================= */
 export function Hero() {
   return (
-    <section className="min-h-screen bg-[#0d1117] text-white flex items-center justify-center p-6 lg:p-20">
-      <div className="container mx-auto flex flex-col lg:flex-row-reverse gap-12">
-        {/* ================= CODE CARD ================= */}
-        <div className="w-full lg:w-1/2 flex justify-center">
-          <div
-            className="w-full max-w-md rounded-xl p-[2px]
-            bg-gradient-to-br from-pink-500 via-purple-500 via-cyan-400 via-blue-500 to-yellow-400
-            shadow-[0_0_40px_rgba(168,85,247,0.35)]
-          "
-          >
-            <div className="rounded-xl bg-[#0d1224] overflow-hidden">
-              <div className="flex gap-2 px-4 py-3 border-b border-white/10">
-                <span className="w-3 h-3 bg-red-500 rounded-full" />
-                <span className="w-3 h-3 bg-orange-400 rounded-full" />
-                <span className="w-3 h-3 bg-green-500 rounded-full" />
-              </div>
+    <section className="bg-[#0d1117] text-white min-h-screen">
+      <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 lg:px-6 lg:pl-12 pt-20 lg:pt-0 gap-10">
+        {/* ================= LEFT : CODE CARD ================= */}
+        <div className="w-full lg:w-[70%] flex justify-center">
+          <div className="w-full">
+            <div
+              className="w-full rounded-xl p-[2px]
+              bg-gradient-to-br from-pink-500 via-purple-500 via-cyan-400 via-blue-500 to-yellow-400
+              shadow-[0_0_40px_rgba(168,85,247,0.35)]"
+            >
+              <div className="rounded-xl bg-[#0d1224] overflow-hidden">
+                {/* window bar */}
+                <div
+                  className="flex gap-2 px-4 py-3 border-b"
+                  style={{
+                    borderImage:
+                      'linear-gradient(to right, #facc15, #3b82f6, #22d3ee, #a855f7, #ec4899) 1',
+                  }}
+                >
+                  <span className="w-3 h-3 bg-red-500 rounded-full" />
+                  <span className="w-3 h-3 bg-orange-400 rounded-full" />
+                  <span className="w-3 h-3 bg-green-500 rounded-full" />
+                </div>
 
-              <div className="p-4 font-mono text-xs leading-relaxed overflow-x-auto">
-                <CodeLine>
-                  <span className="text-pink-400">const</span>{' '}
-                  <span className="text-cyan-300">coder</span>{' '}
-                  <span className="text-pink-300">=</span>{' '}
-                  <span className="text-slate-400">{'{'}</span>
-                </CodeLine>
+                {/* code */}
+                <div className="p-[2px] font-mono text-xl md:text-base lg:text-lg leading-relaxed overflow-x-auto">
+                  <CodeLine noBorder>
+                    <span className="text-pink-500">const</span>{' '}
+                    <span className="text-violet-500">coder</span>{' '}
+                    <span className="text-pink-500">=</span>{' '}
+                    <span className="text-orange-400">{'{'}</span>
+                  </CodeLine>
 
-                <CodeLine indent={1}>
-                  <span className="text-white">name</span>:{' '}
-                  <span className="text-amber-300">'E.r T'</span>,
-                </CodeLine>
+                  <CodeLine indent={1}>
+                    <span className="text-green-400">name</span>:{' '}
+                    <span className="text-fuchsia-500">
+                      '
+                      <span className="text-yellow-200 font-extrabold">
+                        E.r TINO
+                      </span>
+                      '
+                    </span>
+                    ,
+                  </CodeLine>
 
-                <CodeLine indent={1}>
-                  <span className="text-white">skills</span>:{' '}
-                  <span className="text-slate-400">[</span>
-                </CodeLine>
+                  <CodeLine indent={1}>
+                    <span className="text-fuchsia-500">skills</span>:{' '}
+                    <span className="text-green-400">{'['}</span>
+                    <span className="text-fuchsia-500">
+                      '
+                      <span className="text-orange-400">
+                        Full Stack Developer
+                      </span>
+                      '
+                    </span>
+                    ,
+                    <span className="text-fuchsia-500">
+                      '
+                      <span className="text-orange-400">
+                        Architectural Home Design
+                      </span>
+                      '
+                    </span>
+                    ,
+                    <span className="text-fuchsia-500">
+                      '<span className="text-orange-400">Microsoft Office</span>
+                      '
+                    </span>
+                    ,
+                    <span className="text-fuchsia-500">
+                      '<span className="text-orange-400">Mathematical</span>'
+                    </span>
+                    ,
+                    <span className="text-fuchsia-500">
+                      '<span className="text-orange-400">English</span>'
+                    </span>
+                    <span className="text-green-400">{']'}</span>,
+                  </CodeLine>
 
-                {/* ===== FULL STACK ===== */}
-                <CodeLine indent={2}>{'{'}</CodeLine>
-                <CodeLine indent={3}>
-                  <span className="text-white">category</span>:{' '}
-                  <span className="text-amber-300">'Full Stack Dev'</span>,
-                </CodeLine>
-                <CodeLine indent={3}>
-                  <span className="text-white">list</span>: [
-                </CodeLine>
-                <CodeLine indent={4}>
-                  <span className="text-amber-300">'HTML'</span>,{' '}
-                  <span className="text-amber-300">'CSS'</span>,{' '}
-                  <span className="text-amber-300">
-                    'JavaScript/TypeScript'
-                  </span>
-                  ,
-                </CodeLine>
-                <CodeLine indent={4}>
-                  <span className="text-amber-300">'React / Next.js'</span>,{' '}
-                  <span className="text-amber-300">'Docker & Kubernetes'</span>,
-                </CodeLine>
-                <CodeLine indent={4}>
-                  <span className="text-amber-300">'AWS / Azure / GCP'</span>,
-                </CodeLine>
-                <CodeLine indent={3}>],</CodeLine>
-                <CodeLine indent={2}>{'},'}</CodeLine>
+                  <CodeLine indent={1}>
+                    <span className="text-yellow-200">hardWorker</span>:{' '}
+                    <span className="text-violet-500">true</span>,
+                  </CodeLine>
 
-                {/* ===== DATA ANALYST ===== */}
-                <CodeLine indent={2}>{'{'}</CodeLine>
-                <CodeLine indent={3}>
-                  <span className="text-white">category</span>:{' '}
-                  <span className="text-amber-300">'Data Analyst'</span>,
-                </CodeLine>
-                <CodeLine indent={3}>
-                  <span className="text-white">list</span>: [
-                </CodeLine>
-                <CodeLine indent={4}>
-                  <span className="text-amber-300">
-                    'Python (Pandas, NumPy)'
-                  </span>
-                  ,
-                </CodeLine>
-                <CodeLine indent={4}>
-                  <span className="text-amber-300">'SQL / NoSQL'</span>,{' '}
-                  <span className="text-amber-300">'Power BI'</span>,
-                </CodeLine>
-                <CodeLine indent={4}>
-                  <span className="text-amber-300">'Statistical Analysis'</span>
-                  ,
-                </CodeLine>
-                <CodeLine indent={3}>],</CodeLine>
-                <CodeLine indent={2}>{'},'}</CodeLine>
+                  <CodeLine indent={1}>
+                    <span className="text-green-200">quickLearner</span>:{' '}
+                    <span className="text-violet-500">true</span>,
+                  </CodeLine>
 
-                {/* ===== ENGLISH ===== */}
-                <CodeLine indent={2}>{'{'}</CodeLine>
-                <CodeLine indent={3}>
-                  <span className="text-white">category</span>:{' '}
-                  <span className="text-amber-300">'English'</span>,
-                </CodeLine>
-                <CodeLine indent={3}>
-                  <span className="text-white">list</span>: [
-                </CodeLine>
-                <CodeLine indent={4}>
-                  <span className="text-amber-300">'Technical Writing'</span>,
-                </CodeLine>
-                <CodeLine indent={4}>
-                  <span className="text-amber-300">'Translation Service'</span>,
-                </CodeLine>
-                <CodeLine indent={4}>
-                  <span className="text-amber-300">
-                    'Professional Communication'
-                  </span>
-                  ,
-                </CodeLine>
-                <CodeLine indent={3}>],</CodeLine>
-                <CodeLine indent={2}>{'}'}</CodeLine>
+                  <CodeLine indent={1}>
+                    <span className="text-red-500">problemSolver</span>:{' '}
+                    <span className="text-violet-500">true</span>,
+                  </CodeLine>
 
-                <CodeLine indent={1}>],</CodeLine>
+                  <CodeLine indent={1}>
+                    <span className="text-lime-400">hireable</span>:{' '}
+                    <span className="text-pink-500">function</span>(){' '}
+                    <span className="text-orange-400">{'{'}</span>
+                  </CodeLine>
 
-                <CodeLine indent={1}>
-                  <span className="text-white">hardWorker</span>:{' '}
-                  <span className="text-orange-400">true</span>,
-                </CodeLine>
-                <CodeLine indent={1}>
-                  <span className="text-white">quickLearner</span>:{' '}
-                  <span className="text-orange-400">true</span>,
-                </CodeLine>
-                <CodeLine indent={1}>
-                  <span className="text-white">problemSolver</span>:{' '}
-                  <span className="text-orange-400">true</span>,
-                </CodeLine>
+                  <CodeLine indent={2}>
+                    <span className="text-pink-500">return</span>{' '}
+                    <span className="text-lime-400">this.</span>
+                    <span className="text-cyan-300">hardWorker</span>{' '}
+                    <span className="text-pink-500">&amp;&amp;</span>{' '}
+                    <span className="text-lime-400">this.</span>
+                    <span className="text-cyan-300">problemSolver</span>;
+                  </CodeLine>
 
-                <CodeLine indent={1}>
-                  <span className="text-green-400">hireable</span>:{' '}
-                  <span className="text-pink-400">function</span>() {'{'}
-                </CodeLine>
+                  <CodeLine indent={1}>
+                    <span className="text-orange-400">{'}'}</span>
+                  </CodeLine>
 
-                <CodeLine indent={2}>
-                  <span className="text-pink-400">return</span>{' '}
-                  <span className="text-cyan-400">this.</span>hardWorker{' '}
-                  <span className="text-pink-300">&amp;&amp;</span>{' '}
-                  <span className="text-cyan-400">this.</span>problemSolver;
-                </CodeLine>
+                  <CodeLine>
+                    <span className="text-orange-400">{'}'}</span>
+                  </CodeLine>
 
-                <CodeLine indent={1}>{'},'}</CodeLine>
-                <CodeLine>{'};'}</CodeLine>
-
-                <CodeLine>
-                  <span className="text-slate-500">
-                    console.log('Status Hireable:', coder.hireable());
-                  </span>
-                </CodeLine>
+                  <CodeLine>
+                    <span className="text-pink-500">console</span>.
+                    <span className="text-orange-400">log</span>
+                    <span className="text-cyan-300">(</span>
+                    <span className="text-fuchsia-500">
+                      '<span className="text-lime-400">Statuse Hireable</span>'
+                    </span>
+                    <span className="text-yellow-300">:</span>
+                    <span className="text-white">,</span>
+                    <span className="text-cyan-300">coder</span>
+                    <span className="text-white">.</span>
+                    <span className="text-orange-400">hireable</span>
+                    <span className="text-white">()</span>
+                    <span className="text-cyan-300">)</span>;
+                  </CodeLine>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        {/* ================= LEFT ================= */}
-        {/* BAGIAN KIRI: TEKS PERKENALAN */}{' '}
-        <div className="w-full lg:w-1/2 text-left space-y-8">
-          {' '}
-          <div className="space-y-4">
-            {' '}
-            <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold leading-tight text-white">
-              {' '}
-              Professional <span className="text-white">
-                {' '}
-                Multi-Talent
-              </span>{' '}
-              <br />{' '}
-            </h1>{' '}
-            <h2>
-              {' '}
-              <span className="text-cyan-400">Full Stack Developer</span>{' '}
-              <span> : </span>{' '}
-              <span className="text-pink-400">Data Analyst</span>{' '}
-              <span> : </span>{' '}
-              <span className="text-blue-500">
-                {' '}
-                Smartphone & Computer Software{' '}
-              </span>{' '}
-              <span> : </span>{' '}
-              <span className="text-yellow-400">
-                {' '}
-                Data Science, Data analytics{' '}
-              </span>{' '}
-              <span> : </span>{' '}
-              <span className="text-red-500">Architectural Home Design</span>{' '}
-              <span> : </span>{' '}
-              <span className="text-white">Legal Consultation</span>{' '}
-              <span> : </span>{' '}
-              <span className="text-orange-400">Mathematics</span>{' '}
-              <span> : </span> <span className="text-cyan-200">English</span>{' '}
-              <span> : </span>{' '}
-              <span className="text-purple-600">Microsoft Office</span>{' '}
-            </h2>{' '}
-          </div>{' '}
-          {/* SOSIAL MEDIA */}{' '}
-          <div className="flex gap-6 text-2xl text-pink-500">
-            {' '}
-            <FaGithub className="cursor-pointer hover:text-white transition" />{' '}
-            <FaLinkedin className="cursor-pointer hover:text-white transition" />{' '}
-            <FaFacebook className="cursor-pointer hover:text-white transition" />{' '}
-            <SiLeetcode className="cursor-pointer hover:text-white transition" />{' '}
-            <FaTwitter className="cursor-pointer hover:text-white transition" />{' '}
-          </div>{' '}
-          {/* TOMBOL ACTION */}{' '}
-          <div className="flex flex-wrap gap-4 pt-4">
-            {' '}
-            <button className="flex items-center gap-2 px-6 py-3 rounded-full border-2 border-pink-500 text-white font-bold uppercase text-xs tracking-widest hover:bg-pink-500 transition">
-              {' '}
-              Contact Me <MdPersonSearch size={20} />{' '}
-            </button>{' '}
-            <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold uppercase text-xs tracking-widest hover:scale-105 transition">
-              {' '}
-              Get Resume <MdFileDownload size={20} />{' '}
-            </button>{' '}
-          </div>{' '}
+
+        {/* ================= RIGHT : TEXT ================= */}
+        <div className="w-full lg:w-[30%] px-6 lg:px-2 flex justify-center items-center">
+          <div className="max-w-3xl space-y-8 lg:space-y-16 flex flex-col item-center">
+            <h1 className="text-3xl lg:text-5xl font-bold text-center">
+              <span className="text-pink-500">Professional</span> <br />
+              <span className="text-white">Multitalent</span>
+            </h1>
+            <div className="flex gap-6 text-2xl text-pink-500 justify-center">
+              <FaGithub className="cursor-pointer hover:text-white transition" />
+              <FaLinkedin className="cursor-pointer hover:text-white transition" />
+              <FaFacebook className="cursor-pointer hover:text-white transition" />
+              <SiLeetcode className="cursor-pointer hover:text-white transition" />
+              <FaTwitter className="cursor-pointer hover:text-white transition" />
+            </div>
+
+            <div className="flex gap-4 flex-wrap">
+              <button className="flex items-center gap-2 px-6 py-3 rounded-full border-2 border-pink-500 hover:bg-pink-500 transition">
+                Contact Me <MdPersonSearch />
+              </button>
+              <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 hover:scale-105 transition">
+                Get Resume <MdFileDownload />
+              </button>
+            </div>
+          </div>
         </div>
-        ,
       </div>
     </section>
   );
