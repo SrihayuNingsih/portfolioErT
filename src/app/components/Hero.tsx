@@ -128,11 +128,11 @@ export function Hero() {
                     <span className="text-violet-500">true</span>,
                   </CodeLine>
                   <CodeLine indent={1}>
-                    <span className="text-green-200">quickLearner</span>:{' '}
+                    <span className="text-yellow-200">quickLearner</span>:{' '}
                     <span className="text-violet-500">true</span>,
                   </CodeLine>
                   <CodeLine indent={1}>
-                    <span className="text-red-500">problemSolver</span>:{' '}
+                    <span className="text-yellow-200">problemSolver</span>:{' '}
                     <span className="text-violet-500">true</span>,
                   </CodeLine>
                   <CodeLine indent={1}>
