@@ -69,225 +69,279 @@ export function Hero() {
               {/* code */}
               <div className="p-[2px] font-mono text-xs md:text-sm leading-relaxed overflow-x-auto">
                 <CodeLine noBorder>
-                  <span className="text-pink-400">const</span>{' '}
-                  <span className="text-cyan-300">coder</span>{' '}
-                  <span className="text-pink-300">=</span>{' '}
-                  <span className="text-slate-400">{'{'}</span>
+                  <span className="text-pink-500">const</span>{' '}
+                  <span className="text-violet-500">coder</span>{' '}
+                  <span className="text-pink-500">=</span>{' '}
+                  <span className="text-orange-400">{'{'}</span>
                 </CodeLine>
                 <CodeLine indent={1}>
-                  <span className="text-white">name</span>:{' '}
-                  <span className="text-amber-300">'E.r T'</span>,
+                  <span className="text-green-400">name</span>:{' '}
+                  <span className="text-fuchsia-500">
+                    '
+                    <span className="text-yellow-200 font-extrabold">
+                      E.r TINO
+                    </span>
+                    '
+                  </span>
+                  ,
                 </CodeLine>
                 <CodeLine indent={1}>
-                  <span className="text-white">skills</span>:{' '}
-                  <span className="text-slate-400">[</span>
+                  <span className="text-fuchsia-500">skills</span>:{' '}
+                  <span className="text-green-400">{'['}</span>
                 </CodeLine>
 
                 {/* ===== FULL STACK ===== */}
                 <CodeLine indent={2}>
-                  {'{'}
-                  <span className="text-white"> category:</span>
-                  <span className="text-amber-300">'Full Stack Dev'</span>,
-                  <span className="text-white">list:</span>
-                  <span>{'['}</span>
-                  <span className="text-amber-300">'HTML'</span>,
-                  <span className="text-amber-300">'CSS'</span>,
-                  <span className="text-amber-300">
-                    'JavaScript / TypeScript'
+                  <span className="text-orange-400">{'{'}</span>
+                  <span className="text-cyan-400"> category:</span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-lime-400">Full Stack Dev</span>'
                   </span>
-                  <span className="text-amber-300">'React/Next.js'</span>,
-                  <span className="text-amber-300">'Docker & Kubernetes'</span>,
-                  <span className="text-amber-300">'AWS/Azure/GCP'</span>
-                  <span>{']'}</span>
-                  {'}'}
-                </CodeLine>
-
-                {/* ===== DATA ANALYST ===== */}
-                <CodeLine indent={2}>
-                  {'{'}
-                  <span className="text-white"> category:</span>
-                  <span className="text-amber-300">'Data Analyst'</span>,
-                  <span className="text-white">list:</span>
-                  <span>{'['}</span>
-                  <span className="text-amber-300">
-                    'Python (Pandas, NumPy)'
+                  ,<span className="text-cyan-300">list:</span>
+                  <span className="text-green-400">{'['}</span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">HTML</span>'
                   </span>
                   ,
-                  <span className="text-amber-300">
-                    'SQL & NoSQL Databases'
-                  </span>
-                  ,<span className="text-amber-300">'Power BI & Tableau'</span>
-                  <span className="text-amber-300">'Data Visualization'</span>,
-                  <span className="text-amber-300">'Statistical Analysis'</span>
-                  ,<span className="text-amber-300">'Machine Learning'</span>,
-                  <span className="text-amber-300">'Excel Advanced'</span>
-                  <span>{']'}</span>
-                  {'}'}
-                </CodeLine>
-
-                {/* ===== Legal & Compliance Domain ===== */}
-                <CodeLine indent={2}>
-                  {'{'}
-                  <span className="text-white"> category:</span>
-                  <span className="text-amber-300">
-                    'Legal & Compliance Domain'
-                  </span>
-                  ,<span className="text-white">list:</span>
-                  <span>{'['}</span>
-                  <span className="text-amber-300">
-                    'Legal Fundamentals & Regulatory Frameworks'
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">CSS</span>'
                   </span>
                   ,
-                  <span className="text-amber-300">
-                    'Civil & Commercial Law'
+                  <span className="text-fuchsia-500">
+                    '
+                    <span className="text-yellow-400">
+                      JavaScript / TypeScript
+                    </span>
+                    '
+                  </span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">React/Next.js</span>'
                   </span>
                   ,
-                  <span className="text-amber-300">
-                    'Business & Property Law'
+                  <span className="text-fuchsia-500">
+                    '
+                    <span className="text-yellow-400">Docker & Kubernetes</span>
+                    '
                   </span>
                   ,
-                  <span className="text-amber-300">
-                    'Contract Analysis & Agreement Engineering'
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">AWS/Azure/GCP</span>'
                   </span>
-                  ,
-                  <span className="text-amber-300">
-                    'Legal Consulting & Compliance Advisory'
-                  </span>
-                  ,
-                  <span className="text-amber-300">
-                    'Legal Drafting & Documentation Systems'
-                  </span>
-                  <span>{']'}</span>
-                  {'}'}
+                  <span className="text-green-400">{']'}</span>
+                  <span className="text-orange-400">{'}'}</span>
                 </CodeLine>
 
                 {/* ===== ARCHITECTURE ===== */}
                 <CodeLine indent={2}>
-                  {'{'}
-                  <span className="text-white"> category:</span>
-                  <span className="text-amber-300">'Architecture'</span>,
-                  <span className="text-white">list:</span>
-                  <span>{'['}</span>
-                  <span className="text-amber-300">
-                    'Architectural Home Design'
+                  <span className="text-orange-400">{'{'}</span>
+                  <span className="text-cyan-400"> category:</span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-lime-400">Architecture</span>'
                   </span>
-                  ,<span className="text-amber-300">'Interior Design'</span>
-                  <span>{']'}</span>
-                  {'}'}
+                  ,<span className="text-cyan-300">list:</span>
+                  <span className="text-green-400">{'['}</span>
+                  <span className="text-fuchsia-500">
+                    '
+                    <span className="text-yellow-400">
+                      Architectural Home Design
+                    </span>
+                    '
+                  </span>
+                  ,
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">Interior Design</span>'
+                  </span>
+                  <span className="text-green-400">{']'}</span>
+                  <span className="text-orange-400">{'}'}</span>
                 </CodeLine>
 
                 {/* ===== MICROSOFT OFFICE ===== */}
                 <CodeLine indent={2}>
-                  {'{'}
-                  <span className="text-white"> category:</span>
-                  <span className="text-amber-300">'Microsoft Office'</span>,
-                  <span className="text-white">list:</span>
-                  <span>{'['}</span>
-                  <span className="text-amber-300">'Microsoft Word'</span>,
-                  <span className="text-amber-300">'Microsoft Excel'</span>,
-                  <span className="text-amber-300">'Microsoft PowerPoint'</span>
-                  ,<span className="text-amber-300">'Microsoft Outlook'</span>
-                  <span>{']'}</span>
-                  {'}'}
+                  <span className="text-orange-400">{'{'}</span>
+                  <span className="text-cyan-400"> category:</span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-lime-400">Microsoft Office</span>'
+                  </span>
+                  ,<span className="text-cyan-300">list:</span>
+                  <span className="text-green-400">{'['}</span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">Microsoft Word</span>'
+                  </span>
+                  ,
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">Microsoft Excel</span>'
+                  </span>
+                  ,
+                  <span className="text-fuchsia-500">
+                    '
+                    <span className="text-yellow-400">
+                      Microsoft PowerPoint
+                    </span>
+                    '
+                  </span>
+                  ,
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">Microsoft Outlook</span>'
+                  </span>
+                  <span className="text-green-400">{']'}</span>
+                  <span className="text-orange-400">{'}'}</span>
                 </CodeLine>
 
                 {/* ===== Mathematical & Computational Skills ===== */}
                 <CodeLine indent={2}>
-                  {'{'}
-                  <span className="text-white"> category:</span>
-                  <span className="text-amber-300">
-                    'Mathematical & Computational Skills'
+                  <span className="text-orange-400">{'{'}</span>
+                  <span className="text-cyan-400"> category:</span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-lime-400">Mathematical Skills</span>'
                   </span>
-                  ,<span className="text-white">list:</span>
-                  <span>{'['}</span>
-                  <span className="text-amber-300">
+                  ,<span className="text-cyan-300">list:</span>
+                  <span className="text-green-400">{'['}</span>
+                  <span className="text-yellow-400">
                     'Applied Mathematics for Computing'
                   </span>
                   ,
-                  <span className="text-amber-300">
-                    'Calculus, Linear Algebra & Discrete Math'
+                  <span className="text-fuchsia-500">
+                    '
+                    <span className="text-yellow-400">
+                      Calculus, Linear Algebra & Discrete Math
+                    </span>
+                    '
                   </span>
                   ,
-                  <span className="text-amber-300">
-                    'Statistical Modeling & Probability Analysis'
+                  <span className="text-fuchsia-500">
+                    '
+                    <span className="text-yellow-400">
+                      Optimization Methods & Algorithm Design
+                    </span>
+                    '
                   </span>
-                  ,
-                  <span className="text-amber-300">
-                    'Financial Mathematics & Quantitative Analysis'
-                  </span>
-                  <span className="text-amber-300">
-                    'Optimization Methods & Algorithm Design'
-                  </span>
-                  <span>{']'}</span>
-                  {'}'}
+                  <span className="text-green-400">{']'}</span>
+                  <span className="text-orange-400">{'}'}</span>
                 </CodeLine>
 
                 {/* ===== ENGLISH ===== */}
                 <CodeLine indent={2}>
-                  {'{'}
-                  <span className="text-white"> category:</span>
-                  <span className="text-amber-300">'English'</span>,
-                  <span className="text-white">list:</span>
-                  <span>{'['}</span>
-                  <span className="text-amber-300">'Technical Writing'</span>,
-                  <span className="text-amber-300">'Translation Service'</span>,
-                  <span className="text-amber-300">
-                    'Professional Communication'
+                  <span className="text-orange-400">{'{'}</span>
+                  <span className="text-cyan-400"> category:</span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-lime-400">English</span>'
                   </span>
-                  <span className="text-amber-300">
-                    'TOEFL/IELTS Certified'
+                  ,<span className="text-cyan-300">list:</span>
+                  <span className="text-green-400">{'['}</span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">Technical Writing</span>'
                   </span>
-                  <span>{']'}</span>
-                  {'}'}
+                  ,
+                  <span className="text-fuchsia-500">
+                    '
+                    <span className="text-yellow-400">Translation Service</span>
+                    '
+                  </span>
+                  ,
+                  <span className="text-fuchsia-500">
+                    '
+                    <span className="text-yellow-400">
+                      Professional Communication
+                    </span>
+                    '
+                  </span>
+                  <span className="text-fuchsia-500">
+                    '
+                    <span className="text-yellow-400">
+                      TOEFL/IELTS Certified
+                    </span>
+                    '
+                  </span>
+                  <span className="text-green-400">{']'}</span>
+                  <span className="text-orange-400">{'}'}</span>
                 </CodeLine>
 
                 {/* ===== TOOLS & FRAMEWORKS ===== */}
                 <CodeLine indent={2}>
-                  {'{'}
-                  <span className="text-white"> category:</span>
-                  <span className="text-amber-300">'Tools and Frameworks'</span>
-                  ,<span className="text-white">list:</span>
-                  <span>{'['}</span>
-                  <span className="text-amber-300">'VS Code & IDEs'</span>,
-                  <span className="text-amber-300">'Figma & Adobe XD'</span>,
-                  <span className="text-amber-300">'Postman & Insomnia'</span>,
-                  <span className="text-amber-300">
-                    'Jest & Testing Libraries'
+                  <span className="text-orange-400">{'{'}</span>
+                  <span className="text-cyan-400"> category:</span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-lime-400">Tools and Frameworks</span>
+                    '
                   </span>
-                  <span className="text-amber-300">'Webpack & Vite'</span>
-                  <span>{']'}</span>
-                  {'}'}
+                  ,<span className="text-cyan-300">list:</span>
+                  <span className="text-green-400">{'['}</span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">VS Code & IDEs</span>'
+                  </span>
+                  ,
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">Figma & Adobe XD</span>'
+                  </span>
+                  ,
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">Postman & Insomnia</span>
+                    '
+                  </span>
+                  ,
+                  <span className="text-fuchsia-500">
+                    '
+                    <span className="text-yellow-400">
+                      Jest & Testing Libraries
+                    </span>
+                    '
+                  </span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-yellow-400">Webpack & Vite</span>'
+                  </span>
+                  <span className="text-green-400">{']'}</span>
+                  <span className="text-orange-400">{'}'}</span>
                 </CodeLine>
 
-                <CodeLine indent={1}>],</CodeLine>
                 <CodeLine indent={1}>
-                  <span className="text-white">hardWorker</span>:{' '}
-                  <span className="text-orange-400">true</span>,
+                  <span className="text-green-400">{']'}</span>,
                 </CodeLine>
                 <CodeLine indent={1}>
-                  <span className="text-white">quickLearner</span>:{' '}
-                  <span className="text-orange-400">true</span>,
+                  <span className="text-yellow-200">hardWorker</span>:{' '}
+                  <span className="text-violet-500">true</span>,
                 </CodeLine>
                 <CodeLine indent={1}>
-                  <span className="text-white">problemSolver</span>:{' '}
-                  <span className="text-orange-400">true</span>,
+                  <span className="text-green-200">quickLearner</span>:{' '}
+                  <span className="text-violet-500">true</span>,
                 </CodeLine>
                 <CodeLine indent={1}>
-                  <span className="text-green-400">hireable</span>:{' '}
-                  <span className="text-pink-400">function</span>() {'{'}
+                  <span className="text-red-500">problemSolver</span>:{' '}
+                  <span className="text-violet-500">true</span>,
+                </CodeLine>
+                <CodeLine indent={1}>
+                  <span className="text-lime-400">hireable</span>:{' '}
+                  <span className="text-pink-500">function</span>(){' '}
+                  <span className="text-orange-400">{'}'}</span>
                 </CodeLine>
                 <CodeLine indent={2}>
-                  <span className="text-pink-400">return</span>{' '}
-                  <span className="text-cyan-400">this.</span>hardWorker{' '}
-                  <span className="text-pink-300">&amp;&amp;</span>{' '}
-                  <span className="text-cyan-400">this.</span>problemSolver;
+                  <span className="text-pink-500">return</span>{' '}
+                  <span className="text-orange-400">this.</span>
+                  <span className="text-cyan-300">hardWorker</span>{' '}
+                  <span className="text-pink-500">&amp;&amp;</span>{' '}
+                  <span className="text-orange-400">this.</span>
+                  <span className="text-cyan-300">problemSolver</span>;
                 </CodeLine>
-                <CodeLine indent={1}>{'},'}</CodeLine>
-                <CodeLine>{'};'}</CodeLine>
+                <CodeLine indent={1}>
+                  <span className="text-orange-400">{'}'}</span>
+                </CodeLine>
                 <CodeLine>
-                  <span className="text-slate-500">
-                    console.log('Status Hireable:', coder.hireable());
+                  <span className="text-orange-400">{'}'}</span>
+                </CodeLine>
+                <CodeLine>
+                  <span className="text-pink-500">console</span>.
+                  <span className="text-orange-400">log</span>
+                  <span className="text-cyan-300">{'('}</span>
+                  <span className="text-fuchsia-500">
+                    '<span className="text-lime-400">Statuse Hireable</span>'
                   </span>
+                  <span className="text-yellow-300">:</span>
+                  <span className="text-white">,</span>
+                  <span className="text-cyan-300">coder</span>
+                  <span className="text-white">.</span>
+                  <span className="text-orange-400">hireable</span>
+                  <span className="text-white">{'()'}</span>
+                  <span className="text-cyan-300">{')'}</span>
+                  <span className="text-white">;</span>
                 </CodeLine>
               </div>
             </div>

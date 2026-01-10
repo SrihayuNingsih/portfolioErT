@@ -40,6 +40,20 @@ export function Header() {
   }, [mobileMenuOpen]);
 
   // =========================
+  // LOCK SCROLL WHEN MOBILE MENU OPEN
+  // =========================
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [mobileMenuOpen]);
+
+  // =========================
   // NAV ITEMS
   // =========================
   const navItems = [
@@ -137,10 +151,10 @@ export function Header() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: '-100%' }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: '-100%' }}
-            transition={{ duration: 0.35, ease: 'easeInOut' }}
+            initial={{ opacity: 0, y: '-100%', scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: '-100%', scale: 0.98 }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }} // iOS cubic-bezier
             className="
               fixed inset-0 z-[999]
               md:hidden
@@ -183,7 +197,11 @@ export function Header() {
                   onClick={(e) => scrollToSection(e, item.href)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.08 }}
+                  transition={{
+                    delay: index * 0.06,
+                    duration: 0.35,
+                    ease: 'easeOut',
+                  }}
                   className="
                     w-full max-w-xs
                     text-center
@@ -219,8 +237,22 @@ export function Header() {
                   to-blue-500
                   hover:brightness-110
                   transition-all
+                  relative
+                  overflow-hidden
                 "
               >
+                <span
+                  className="
+    absolute inset-0
+    bg-gradient-to-r
+    from-cyan-400
+    to-blue-500
+    opacity-0
+    blur-xl
+    transition-opacity duration-300
+    group-hover:opacity-60
+  "
+                />
                 Contact Me
               </a>
             </div>
