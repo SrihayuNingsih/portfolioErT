@@ -115,7 +115,7 @@ export function Hero() {
                     </span>
                     ,
                     <span className="text-fuchsia-500">
-                      '<span className="text-orange-400">Mathematic</span>'
+                      '<span className="text-orange-400">Mathematics</span>'
                     </span>
                     ,
                     <span className="text-fuchsia-500">
@@ -141,9 +141,13 @@ export function Hero() {
                     <span className="text-orange-400">{'{'}</span>
                   </CodeLine>
                   <CodeLine indent={2}>
-                    <span className="text-pink-500">return</span>{' '}
+                    <span className="text-pink-500">return </span>
+                    {'  '}
                     <span className="text-lime-400">this.</span>
                     <span className="text-cyan-300">hardWorker</span>{' '}
+                    <span className="text-pink-500">&amp;&amp;</span>{' '}
+                    <span className="text-lime-400">this.</span>
+                    <span className="text-cyan-300">quickLearner</span>{' '}
                     <span className="text-pink-500">&amp;&amp;</span>{' '}
                     <span className="text-lime-400">this.</span>
                     <span className="text-cyan-300">problemSolver</span>;
@@ -156,8 +160,7 @@ export function Hero() {
                     <span className="text-green-400">log</span>
                     <span className="text-cyan-300">{'('}</span>
                     <span className="text-fuchsia-500">
-                      '<span className="text-orange-400">Statuse Hireable</span>
-                      '
+                      '<span className="text-orange-400">Status Hireable</span>'
                     </span>
                     , <span className="text-pink-500">coder</span>.
                     <span className="text-yellow-300">hireable</span>()
