@@ -1,10 +1,10 @@
 import { motion } from 'motion/react';
 import { Award, Briefcase, GraduationCap, Users } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import profileImg from '@/assets/images/about.jpg';
 
 export function About() {
   const stats = [
-    { icon: Award, label: 'Tahun Pengalaman', value: '10+' },
+    { icon: Award, label: 'Tahun Pengalaman', value: '20+' },
     { icon: Briefcase, label: 'Proyek Selesai', value: '500+' },
     { icon: Users, label: 'Klien Puas', value: '200+' },
     { icon: GraduationCap, label: 'Sertifikasi', value: '25+' },
@@ -37,9 +37,9 @@ export function About() {
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1718220216044-006f43e3a9b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzY3MDY0NDE3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Professional workspace"
+              <img
+                src={profileImg}
+                alt="Triple X"
                 className="w-full h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
@@ -58,16 +58,17 @@ export function About() {
               Profesional dengan Beragam Keahlian
             </h3>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Saya adalah seorang profesional multi-talenta dengan pengalaman lebih dari 10 tahun 
-              di berbagai bidang teknologi, hukum, dan bisnis. Dengan penguasaan mendalam dalam 
-              berbagai bahasa pemrograman, framework modern, hingga keahlian di bidang hukum dan 
-              matematika.
+              Profesional multi-talenta dengan pengalaman lebih dari 20 tahun di
+              berbagai bidang teknologi, hukum, dan bisnis. Dengan penguasaan
+              mendalam dalam berbagai bahasa pemrograman, framework modern,
+              hingga keahlian di bidang hukum, bahasa Inggris dan matematika.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Selain sebagai Full Stack Developer dan Data Analyst, saya juga menyediakan layanan 
-              konsultasi hukum, desain rumah profesional, dan jual beli mobil premium. Kombinasi 
-              unik dari keahlian teknis dan bisnis memungkinkan saya memberikan solusi komprehensif 
-              untuk setiap klien.
+              Selain sebagai Full Stack Developer dan Data Analyst, saya juga
+              menyediakan layanan konsultasi hukum, desain rumah profesional,
+              dan jual beli mobil premium. Kombinasi unik dari keahlian teknis
+              dan bisnis memungkinkan saya memberikan solusi komprehensif untuk
+              setiap klien.
             </p>
             <div className="pt-4">
               <motion.a
@@ -97,7 +98,9 @@ export function About() {
               <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg mb-4">
                 <stat.icon className="w-6 h-6 text-white" />
               </div>
-              <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+              <div className="text-3xl font-bold text-white mb-2">
+                {stat.value}
+              </div>
               <div className="text-slate-400">{stat.label}</div>
             </motion.div>
           ))}
