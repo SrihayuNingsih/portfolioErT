@@ -38,7 +38,8 @@ export function Footer() {
               Portfolio
             </h3>
             <p className="text-slate-400 mb-4">
-              Profesional multi-talenta yang siap membantu mewujudkan visi dan tujuan bisnis Anda.
+              A multidisciplinary professional who blends technology, design,
+              and analytical thinking to deliver practical solutions.
             </p>
           </motion.div>
 
@@ -123,8 +124,9 @@ export function Footer() {
               viewport={{ once: true }}
               className="text-slate-400 flex items-center gap-2"
             >
-              © {currentYear} Portfolio. Made with{' '}
-              <Heart className="w-4 h-4 text-red-500 fill-current" /> in Indonesia
+              © {currentYear} Design. by{' '}
+              {/* <Heart className="w-4 h-4 text-red-500 fill-current" /> */}{' '}
+              <span className="text-pink-500">TripleX</span>
             </motion.p>
             <motion.div
               initial={{ opacity: 0 }}

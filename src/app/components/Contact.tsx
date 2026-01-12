@@ -1,5 +1,13 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, MessageSquare, Linkedin, Github } from 'lucide-react';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  MessageSquare,
+  Linkedin,
+  Github,
+} from 'lucide-react';
 import { useState } from 'react';
 
 export function Contact() {
@@ -18,7 +26,9 @@ export function Contact() {
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -29,7 +39,7 @@ export function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'contact@professional.com',
+      value: 'er.rahmawan@gmail.com',
       link: 'mailto:contact@professional.com',
     },
     {
@@ -41,7 +51,7 @@ export function Contact() {
     {
       icon: MapPin,
       title: 'Lokasi',
-      value: 'Jakarta, Indonesia',
+      value: 'Bojonegoro, ID',
       link: '#',
     },
     {
@@ -53,8 +63,18 @@ export function Contact() {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, label: 'LinkedIn', link: '#', color: 'from-blue-600 to-blue-700' },
-    { icon: Github, label: 'GitHub', link: '#', color: 'from-gray-700 to-gray-900' },
+    {
+      icon: Linkedin,
+      label: 'LinkedIn',
+      link: '#',
+      color: 'from-blue-600 to-blue-700',
+    },
+    {
+      icon: Github,
+      label: 'GitHub',
+      link: '#',
+      color: 'from-gray-700 to-gray-900',
+    },
   ];
 
   return (
@@ -73,7 +93,8 @@ export function Contact() {
             </span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Mari berdiskusi tentang proyek Anda dan bagaimana saya dapat membantu
+            Mari berdiskusi tentang proyek Anda dan bagaimana saya dapat
+            membantu
           </p>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mt-4"></div>
         </motion.div>
@@ -86,11 +107,13 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Informasi Kontak</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">
+              Informasi Kontak
+            </h3>
             <p className="text-slate-400 mb-8 leading-relaxed">
-              Jangan ragu untuk menghubungi saya melalui berbagai channel yang tersedia. 
-              Saya siap membantu Anda dengan proyek teknologi, konsultasi hukum, desain rumah, 
-              atau layanan lainnya.
+              Jangan ragu untuk menghubungi melalui berbagai channel yang
+              tersedia. Saya siap membantu Anda dengan proyek teknologi,
+              konsultasi hukum, desain rumah, atau layanan lainnya.
             </p>
 
             <div className="space-y-6 mb-8">
@@ -118,7 +141,7 @@ export function Contact() {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-xl font-bold text-white mb-4">Ikuti Saya</h4>
+              <h4 className="text-xl font-bold text-white mb-4">Follow Me</h4>
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -145,9 +168,14 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Kirim Pesan</h3>
-              
+            <form
+              onSubmit={handleSubmit}
+              className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8"
+            >
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Kirim Pesan
+              </h3>
+
               <div className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-slate-300 mb-2">
@@ -182,7 +210,10 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-slate-300 mb-2">
+                  <label
+                    htmlFor="subject"
+                    className="block text-slate-300 mb-2"
+                  >
                     Subjek
                   </label>
                   <input
@@ -198,7 +229,10 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-slate-300 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-slate-300 mb-2"
+                  >
                     Pesan
                   </label>
                   <textarea
@@ -236,11 +270,11 @@ export function Contact() {
           className="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-center"
         >
           <h3 className="text-3xl font-bold text-white mb-4">
-            Siap Untuk Memulai Proyek Anda?
+            Siap Memulai Proyek Anda?
           </h3>
           <p className="text-blue-100 text-lg mb-6 max-w-2xl mx-auto">
-            Dapatkan konsultasi gratis untuk proyek Anda. Mari berdiskusi dan wujudkan 
-            ide Anda menjadi kenyataan!
+            Dapatkan konsultasi gratis untuk proyek Anda. Mari berdiskusi dan
+            wujudkan ide Anda menjadi kenyataan!
           </p>
           <motion.a
             href="https://wa.me/6281234567890"
