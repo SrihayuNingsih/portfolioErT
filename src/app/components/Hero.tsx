@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useAnimationControls } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaFacebook, FaTwitter } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 import { MdPersonSearch, MdFileDownload } from 'react-icons/md';
@@ -7,250 +7,258 @@ import { MdPersonSearch, MdFileDownload } from 'react-icons/md';
 /* ================= CODE LINE ================= */
 const CodeLine = ({
   indent = 0,
-  noBorder = false,
   children,
 }: {
   indent?: number;
-  noBorder?: boolean;
   children: React.ReactNode;
-}) => {
-  return (
-    <div
-      className={`
-        group
-        relative
-        flex flex-wrap
-        items-start
-        gap-x-1
-        px-3 md:px-4
-        py-[2px]
-        max-w-full
-        overflow-hidden
-        rounded-md
-        text-[0.95em]
-        cursor-text transition-all duration-200 ease-out
-        ${
-          !noBorder
-            ? 'hover:bg-gradient-to-r hover:from-white/5 hover:to-transparent transition border-l-2 border-transparent group-hover:border-cyan-400 group-hover:pl-3'
-            : ''
-        }
-      `}
-      style={{
-        marginLeft: `${Math.min(indent * 12, 32)}px`,
-      }}
-    >
-      <span className="pointer-events-none absolute left-0 top-0 h-full w-[2px] bg-cyan-400/0 group-hover:bg-cyan-400/60 transition-all duration-200" />
-      {children}
-    </div>
-  );
+}) => (
+  <div
+    className="flex items-start gap-x-1 px-3 py-[2px] font-mono text-sm sm:text-base leading-relaxed"
+    style={{ marginLeft: `${indent * 14}px` }}
+  >
+    {children}
+  </div>
+);
+
+/* ================= TYPING VARIANT ================= */
+const typingVariants = {
+  typing: {
+    clipPath: 'inset(0 0% 0 0)',
+    transition: { duration: 1.2, ease: 'steps(7)' },
+  },
+  hold: {
+    clipPath: 'inset(0 0% 0 0)',
+    transition: { duration: 2 },
+  },
+  deleting: {
+    clipPath: 'inset(0 100% 0 0)',
+    transition: { duration: 1.2, ease: 'steps(7)' },
+  },
+  idle: {
+    clipPath: 'inset(0 100% 0 0)',
+    transition: { duration: 1 },
+  },
 };
 
 /* ================= HERO ================= */
 export function Hero() {
+  const controls = useAnimationControls();
+  React.useEffect(() => {
+    const run = async () => {
+      while (true) {
+        await controls.start('typing');
+        await controls.start('hold');
+        await new Promise((r) => setTimeout(r, 2000));
+        await controls.start('deleting');
+        await new Promise((r) => setTimeout(r, 1000));
+        await controls.start('idle');
+      }
+    };
+    run();
+  }, [controls]);
+
   return (
-    <section className="bg-[#0d1117] text-white flex flex-col items-center min-h-screen">
-      {/* ================= PAGE 1 : CODE CARD ================= */}
-      <motion.div
-        variants={{
-          hidden: { opacity: 0, y: 6 },
-          show: { opacity: 1, y: 0 },
-        }}
-        className="w-[95%]"
-      >
-        <div className="flex items-center justify-center px-2 pt-20 pb-8 lg:pt-18 lg:px-6">
-          <div className="w-full">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.97 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
-              className="w-full rounded-xl p-[2px]
-            bg-gradient-to-br from-pink-500 via-purple-500 via-cyan-400 via-blue-500 to-yellow-400
-            shadow-[0_0_40px_rgba(168,85,247,0.35)]"
+    <section className="bg-[#0d1117] text-white min-h-screen flex justify-center px-3 sm:px-6">
+      <div className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 space-y-10 sm:space-y-14">
+        {/* ================= IDENTITY ================= */}
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: 0.12,
+              },
+            },
+          }}
+          className="text-center space-y-3 sm:space-y-4"
+        >
+          <motion.h1
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              show: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold"
+          >
+            Hi, I&apos;m <span className="text-pink-500">Triple</span>
+            <span className="text-pink-500">X</span>
+          </motion.h1>
+
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              show: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="max-w-2xl mx-auto text-gray-300"
+          >
+            A multidisciplinary professional who blends technology, design, and
+            analytical thinking to deliver practical solutions.
+          </motion.p>
+
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              show: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="text-sm text-gray-400"
+          >
+            Curious learner, problem solver, and detail-oriented professional.
+          </motion.p>
+        </motion.div>
+
+        {/* ================= SKILL CLUSTERS ================= */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          {[
+            {
+              title: 'Tech',
+              items: ['Full Stack Web', 'Data Analysis'],
+            },
+            {
+              title: 'Design',
+              items: ['Architectural Home Design'],
+            },
+            {
+              title: 'Analytical',
+              items: ['Mathematics'],
+            },
+            {
+              title: 'Professional',
+              items: ['English', 'Microsoft Office'],
+            },
+          ].map((skill) => (
+            <div
+              key={skill.title}
+              className="rounded-xl border border-white/10 p-4
+              bg-gradient-to-br from-white/5 to-transparent
+              hover:border-pink-500/60 transition transform hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-500/10"
             >
-              <div className="rounded-xl bg-[#0d1224] overflow-hidden">
-                {/* window bar */}
-                <div
-                  className="flex gap-2 px-4 py-3 border-b"
-                  style={{
-                    borderImage:
-                      'linear-gradient(to right, #facc15, #3b82f6, #22d3ee, #a855f7, #ec4899) 1',
-                  }}
-                >
-                  <span className="w-3 h-3 bg-red-500 rounded-full" />
-                  <span className="w-3 h-3 bg-orange-400 rounded-full" />
-                  <span className="w-3 h-3 bg-green-500 rounded-full" />
-                </div>
+              <h3 className="font-semibold text-pink-400 mb-2">
+                {skill.title}
+              </h3>
+              <ul className="text-sm text-gray-300 space-y-1">
+                {skill.items.map((i) => (
+                  <li key={i}>• {i}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
 
-                {/* code */}
-                <motion.div
-                  initial="hidden"
-                  animate="show"
-                  variants={{
-                    hidden: { opacity: 0 },
-                    show: {
-                      opacity: 1,
-                      transition: {
-                        staggerChildren: 0.05,
-                      },
-                    },
-                  }}
-                  className="p-[2px] font-mono text-sm sm:text-base lg:text-xl leading-relaxed overflow-x-auto"
-                >
-                  <CodeLine noBorder>
-                    <span className="text-pink-500 font-semibold tracking-wide group-hover:text-cyan-300 transition-colors">
-                      const
-                    </span>{' '}
-                    <span className="text-violet-500 font-bold">coder</span>{' '}
-                    <span className="text-pink-500">=</span>{' '}
-                    <span className="text-orange-400">{'{'}</span>
-                  </CodeLine>
-                  <CodeLine indent={1}>
-                    <span className="text-green-400">name</span>:{' '}
-                    <span className="text-fuchsia-500">
-                      '
-                      <span className="inline-flex items-baseline">
-                        <motion.span
-                          initial={{ clipPath: 'inset(0 100% 0 0)' }}
-                          animate={{
-                            clipPath: [
-                              'inset(0 100% 0 0)',
-                              'inset(0 0% 0 0)',
-                              'inset(0 0% 0 0)',
-                              'inset(0 100% 0 0)',
-                            ],
-                          }}
-                          transition={{
-                            duration: 4,
-                            times: [0, 0.25, 0.75, 1],
-                            ease: 'easeInOut',
-                            repeat: Infinity,
-                          }}
-                          className="text-yellow-200 font-extrabold inline-block whitespace-nowrap align-bottom leading-none"
-                        >
-                          E.r TINO
-                        </motion.span>
-                      </span>
-                      '
-                    </span>
-                    ,
-                  </CodeLine>
-                  <CodeLine indent={1}>
-                    <span className="text-fuchsia-500">skills</span>:{' '}
-                    <span className="text-green-400">{'['}</span>
-                    <span className="text-fuchsia-500">
-                      '
-                      <span className="text-orange-400">
-                        Full Stack Web Developer
-                      </span>
-                      '
-                    </span>
-                    ,
-                    <span className="text-fuchsia-500">
-                      '<span className="text-orange-400">Data Analyst</span>'
-                    </span>
-                    ,
-                    <span className="text-fuchsia-500">
-                      '
-                      <span className="text-orange-400">
-                        Architectural Home Design
-                      </span>
-                      '
-                    </span>
-                    ,
-                    <span className="text-fuchsia-500">
-                      '<span className="text-orange-400">Microsoft Office</span>
-                      '
-                    </span>
-                    ,
-                    <span className="text-fuchsia-500">
-                      '<span className="text-orange-400">Mathematics</span>'
-                    </span>
-                    ,
-                    <span className="text-fuchsia-500">
-                      '<span className="text-orange-400">English</span>'
-                    </span>
-                    <span className="text-green-400">{']'}</span>,
-                  </CodeLine>
-                  <CodeLine indent={1}>
-                    <span className="text-yellow-200">hardWorker</span>:{' '}
-                    <span className="text-violet-500">true</span>,
-                  </CodeLine>
-                  <CodeLine indent={1}>
-                    <span className="text-yellow-200">quickLearner</span>:{' '}
-                    <span className="text-violet-500">true</span>,
-                  </CodeLine>
-                  <CodeLine indent={1}>
-                    <span className="text-yellow-200">problemSolver</span>:{' '}
-                    <span className="text-violet-500">true</span>,
-                  </CodeLine>
-                  <CodeLine indent={1}>
-                    <span className="text-lime-400">hireable</span>:{' '}
-                    <span className="text-pink-500 group-hover:text-cyan-300 transition-colors">
-                      function
-                    </span>
-                    () <span className="text-orange-400">{'{'}</span>
-                  </CodeLine>
-                  <CodeLine indent={2}>
-                    <span className="text-pink-500 group-hover:text-cyan-300 transition-colors">
-                      return{' '}
-                    </span>
-                    {'  '}
-                    <span className="text-lime-400">this.</span>
-                    <span className="text-cyan-300">hardWorker</span>{' '}
-                    <span className="text-pink-500">&amp;&amp;</span>{' '}
-                    <span className="text-lime-400">this.</span>
-                    <span className="text-cyan-300">quickLearner</span>{' '}
-                    <span className="text-pink-500">&amp;&amp;</span>{' '}
-                    <span className="text-lime-400">this.</span>
-                    <span className="text-cyan-300">problemSolver</span>;
-                  </CodeLine>
-                  <CodeLine indent={1}>
-                    <span className="text-orange-400">{'}}'}</span>;
-                  </CodeLine>
-                  <CodeLine>
-                    <span className="text-pink-500 group-hover:text-cyan-300 transition-colors">
-                      console
-                    </span>
-                    .<span className="text-green-400">log</span>
-                    <span className="text-cyan-300">{'('}</span>
-                    <span className="text-fuchsia-500">
-                      '<span className="text-orange-400">Status Hireable</span>'
-                    </span>
-                    , <span className="text-pink-500">coder</span>.
-                    <span className="text-yellow-300">hireable</span>()
-                    <span className="text-cyan-300">{')'}</span>;
-                  </CodeLine>
-                </motion.div>
+        {/* ================= CODE BLOCK ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="rounded-xl p-[2px]
+          bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-400"
+        >
+          <div className="rounded-xl bg-[#0d1224] overflow-hidden">
+            {/* window bar */}
+            <div className="px-0 pt-3">
+              <div className="flex px-4 gap-2 pb-3">
+                <span className="w-3 h-3 bg-red-500 rounded-full" />
+                <span className="w-3 h-3 bg-yellow-400 rounded-full" />
+                <span className="w-3 h-3 bg-green-500 rounded-full" />
               </div>
-            </motion.div>
-          </div>
-        </div>
 
-        {/* ================= PAGE 2 : LEFT ================= */}
-        <div className="w-full flex justify-center pb-4">
-          <div className="max-w-3xl w-full px-6 lg:px-20 space-y-8 item-center">
-            <h1 className="text-2xl sm:text-3xl w-full lg:text-5xl font-bold text-center">
-              Professional Multitalent
-            </h1>
-            <div className="flex gap-6 text-2xl text-pink-500 justify-center">
-              <FaGithub className="cursor-pointer hover:text-white transition" />
-              <FaLinkedin className="cursor-pointer hover:text-white transition" />
-              <FaFacebook className="cursor-pointer hover:text-white transition" />
-              <SiLeetcode className="cursor-pointer hover:text-white transition" />
-              <FaTwitter className="cursor-pointer hover:text-white transition" />
+              <div className="h-px bg-gradient-to-r from-yellow-400 via-green-500 to-pink-500" />
             </div>
 
-            <div className="flex gap-4 flex-wrap justify-center">
-              <button className="cursor-pointer flex items-center gap-2 px-6 py-3 rounded-full border-2 border-pink-500 hover:bg-pink-500 transition">
-                Contact Me <MdPersonSearch />
-              </button>
-              <button className="cursor-pointer flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 hover:scale-105 transition">
-                Get Resume <MdFileDownload />
-              </button>
+            {/* code */}
+            <div className="p-4">
+              <CodeLine>
+                <span className="text-pink-500">const</span>{' '}
+                <span className="text-violet-400">profile</span>{' '}
+                <span className="text-pink-500">=</span>{' '}
+                <span className="text-yellow-300">{'{'}</span>
+              </CodeLine>
+
+              <CodeLine indent={1}>
+                <span className="text-green-400">name</span>:{' '}
+                <span className="text-orange-400">
+                  &apos;
+                  <span className="inline-flex items-center leading-none h-[1em] text-cyan-400 font-extrabold">
+                    <motion.span
+                      variants={typingVariants}
+                      initial="idle"
+                      animate={controls}
+                      className="inline-block align-middle leading-none overflow-hidden whitespace-nowrap border-r-2 border-yellow-300 pr-1"
+                    >
+                      E.r TINO
+                    </motion.span>
+                  </span>
+                  &apos;
+                </span>
+                ,
+              </CodeLine>
+
+              <CodeLine indent={1}>
+                <span className="text-green-400">roles</span>:{' '}
+                <span className="text-white">
+                  <span className="text-blue-600">{'['}</span>
+                  <span className="text-orange-400">'Developer'</span>,
+                  <span className="text-orange-400">'Designer'</span>,
+                  <span className="text-orange-400">'Analyst'</span>,
+                  <span className="text-orange-400">'Professional'</span>
+                  <span className="text-blue-600">{']'}</span>
+                </span>
+                ,
+              </CodeLine>
+
+              <CodeLine indent={1}>
+                <span className="text-green-400">available</span>:{' '}
+                <span className="text-violet-400">true</span>,
+              </CodeLine>
+
+              <CodeLine>
+                <span className="text-yellow-300">{'}'}</span>
+              </CodeLine>
             </div>
           </div>
+        </motion.div>
+
+        {/* ================= CTA ================= */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="flex flex-row gap-4 justify-center items-center"
+        >
+          <button
+            className="flex items-center gap-2 px-6 py-3 rounded-full w-full sm:w-[260px] md:w-[280px] justify-center
+            border border-pink-500 text-pink-400
+            hover:bg-pink-500 hover:text-white transition"
+          >
+            Contact Me <MdPersonSearch />
+          </button>
+
+          <button
+            className="flex items-center gap-2 px-6 py-3 rounded-full w-full sm:w-[260px] md:w-[280px] justify-center
+            bg-gradient-to-r from-pink-500 to-purple-600
+            hover:scale-105 transition"
+          >
+            Get Resume <MdFileDownload />
+          </button>
+        </motion.div>
+
+        <p className="text-center text-sm text-gray-400">
+          Available for freelance, remote work, and collaboration.
+        </p>
+
+        {/* ================= SOCIAL ================= */}
+        <div className="flex justify-center gap-5 sm:gap-6 text-lg sm:text-xl text-pink-500 pb-10">
+          <FaGithub className="hover:text-white cursor-pointer hover:-translate-y-0.5 transition-transform" />
+          <FaLinkedin className="hover:text-white cursor-pointer hover:-translate-y-0.5 transition-transform" />
+          <FaFacebook className="hover:text-white cursor-pointer hover:-translate-y-0.5 transition-transform" />
+          <SiLeetcode className="hover:text-white cursor-pointer hover:-translate-y-0.5 transition-transform" />
+          <FaTwitter className="hover:text-white cursor-pointer hover:-translate-y-0.5 transition-transform" />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
