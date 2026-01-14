@@ -232,7 +232,7 @@ export function Hero() {
           <button
             className="flex items-center gap-2 px-6 py-3 rounded-full w-full sm:w-[260px] md:w-[280px] justify-center
             border border-pink-500 text-pink-400
-            hover:bg-pink-500 hover:text-white transition"
+            hover:bg-pink-500 hover:text-white transition cursor-pointer"
           >
             Contact Me <MdPersonSearch />
           </button>
@@ -240,7 +240,7 @@ export function Hero() {
           <button
             className="flex items-center gap-2 px-6 py-3 rounded-full w-full sm:w-[260px] md:w-[280px] justify-center
             bg-gradient-to-r from-pink-500 to-purple-600
-            hover:scale-105 transition"
+            hover:scale-105 transition cursor-pointer"
           >
             Get Resume <MdFileDownload />
           </button>

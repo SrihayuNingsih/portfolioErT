@@ -21,11 +21,11 @@ export function About() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-pink-600 to-purple-500 bg-clip-text text-transparent">
-              About Me
+            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Tentang Saya
             </span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-pink-600 to-purple-500 mx-auto"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
@@ -55,28 +55,27 @@ export function About() {
             className="space-y-6"
           >
             <h3 className="text-3xl font-bold text-white">
-              20 Tahun, 4 Dunia Berbeda, 1 Solusi
+              Profesional dengan Beragam Keahlian
             </h3>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Berangkat dari{' '}
-              <span className="italic text-pink-500">passion</span> di dunia
-              hukum, saya juga mendalami dunia teknologi sebagai Full Stack
-              Developer, Ilmu Matematika dan Bahasa Inggris. Tak cuma itu, saya
-              juga bisa membantu dalam mendesain rumah impian.
+              Profesional multi-talenta dengan pengalaman lebih dari 20 tahun di
+              berbagai bidang teknologi, hukum, dan bisnis. Dengan penguasaan
+              mendalam dalam berbagai bahasa pemrograman, framework modern,
+              hingga keahlian di bidang hukum, bahasa Inggris dan matematika.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Kombinasi 20+ tahun pengalaman di Tech, Hukum, dan Bisnis, membuat
-              saya melihat masalah dari sudut pandang yang unik. Entah kamu
-              butuh solusi digital, kosultasi hukum, atau sekedar diskusi soal
-              properti dan otomotif,{' '}
-              <span className="italic text-pink-500">I'm here to help</span>.
+              Selain sebagai Full Stack Developer dan Data Analyst, saya juga
+              menyediakan layanan konsultasi hukum, desain rumah profesional,
+              dan jual beli mobil premium. Kombinasi unik dari keahlian teknis
+              dan bisnis memungkinkan saya memberikan solusi komprehensif untuk
+              setiap klien.
             </p>
             <div className="pt-4">
               <motion.a
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-block px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg font-semibold shadow-lg shadow-purple-500/50 hover:shadow-purple-500/80 transition-shadow"
+                className="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold shadow-lg shadow-purple-500/50 hover:shadow-purple-500/80 transition-shadow"
               >
                 Mari Bekerja Sama
               </motion.a>
